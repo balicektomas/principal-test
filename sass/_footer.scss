@@ -1,0 +1,42 @@
+/*
+Paticka a veci v ni
+--------------------------------------------------- */
+.contact {
+	@extend %padding;
+	@include bg("bg.jpg", $text-color, no-repeat, auto, 50% 0);
+	color: #fff;
+	text-align: center;
+
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+	h2 {
+		color: #fff;
+		text-shadow: 0 1px 5px #000;
+	}
+	a {
+		color: #fff;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+/*
+Copyright
+--------------------------------------------------- */
+.copyright {
+	background-color: $brand-color;
+	color: $text-color;
+	padding: 15px 0;
+	font-size: 14px;
+
+	p {
+		margin: 0;
+	}
+	a {
+		color: $text-color;
+	}
+}

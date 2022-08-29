@@ -1,0 +1,108 @@
+/*
+Vypis blogu
+--------------------------------------------------- */
+.blog {
+	@extend %padding;
+	background-color: $bg-light;
+
+	.blog-more {
+		padding-top: 40px;
+		margin-bottom: 0;
+	}
+}
+
+/*
+Karta prispevku
+--------------------------------------------------- */
+.card-blog {
+	margin-bottom: 15px;
+	box-shadow: 7px 7px 10px rgba(0,0,0,.15);
+	border-radius: 0 0 $border-radius $border-radius;
+	border-color: $border-color;
+
+	@include breakpoint(575px) {
+		margin-bottom: 30px;
+	}
+
+	.card-img-link {
+		position: relative;
+		overflow: hidden;
+		background-color: $border-color;
+
+		&:before {
+			content: '';
+			display: block;
+			padding-top: 47.8%;
+		}
+		&:hover .card-img-top {
+			transform: scale(1.04);
+		}
+		.card-img-top {
+			border-radius: 0;
+			@include abs-pos(0 auto auto 0);
+			@include wh(100%);
+			object-fit: cover;
+			transition: $transition;
+		}
+	}
+	.card-body {
+		padding: 30px 20px 20px;
+	}
+	.card-title {
+		position: relative;
+		padding-top: 30px;
+		font-weight: 700;
+		font-size: 16px;
+		margin-bottom: 20px;
+
+		&:before {
+			content: '';
+			@include wh(50px, 3px);
+			background-color: $brand-color;
+			@include abs-pos(0 auto auto 0);
+		}
+		a {
+			text-decoration: none;
+			display: block;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	.card-text {
+		font-size: 14px;
+		margin-bottom: 15px;
+		display: none;
+
+		@include breakpoint($lap-and-up) {
+			display: block;
+		}
+	}
+	.card-meta {
+		margin-bottom: 0;
+		font-size: 14px;
+
+		.card-date,
+		.card-author {
+			margin-right: 10px;
+			position: relative;
+			padding-left: 16px;
+
+			&:before {
+				content: '';
+				@include wh(11px);
+				@include abs-pos(50% auto auto 0);
+				transform: translateY(-50%);
+				@include svg-bg('ico-time', transparent, 50% 0, 100% auto);
+			}
+		}
+		.card-author {
+			margin-right: 0;
+
+			&:before {
+				background-image: url(#{$img-path}ico-author.svg);
+			}
+		}
+	}
+}

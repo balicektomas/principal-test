@@ -1,0 +1,102 @@
+/*
+Anotace
+--------------------------------------------------- */
+.annotation {
+	padding: 40px 0;
+	@include bg("bg.jpg", $text-color, no-repeat, auto, 50% -150px);
+	color: #fff;
+
+	@include breakpoint($lap-and-up) {
+		padding: 80px 0 120px;
+	}
+
+	.prefix {
+		margin-bottom: 40px;
+	}
+	h1 {
+		color: $brand-color;
+		max-width: 630px;
+		margin-bottom: 60px;
+
+		@include breakpoint($lap-and-up) {
+			margin-bottom: 100px;
+		}
+	}
+	.badges {
+		margin-bottom: 0;
+		max-width: 760px;
+	}
+}
+
+/*
+Sekce Nase sluzby
+--------------------------------------------------- */
+.our-services {
+	@extend %padding;
+
+	.usp {
+		margin-bottom: 60px;
+		padding-left: 30px;
+		@include svg-bg('ico-right', transparent, 0 4px, 17px auto);
+
+		@include breakpoint($desk-and-up) {
+			background-position: 15px 7px;
+			padding-left: 50px;
+		}
+
+		h3 {
+			font-weight: 700;
+		}
+		p {
+			margin-bottom: 0;
+			font-size: 14px;
+		}
+	}
+}
+
+/*
+Sekce O nas
+--------------------------------------------------- */
+.about-us {
+	@extend %padding;
+	background-color: $bg-light;
+	font-size: 14px;
+}
+.two-columns {
+
+	@include breakpoint($lap-and-up) {
+		column-count: 2;
+		column-gap: 4rem;
+	}
+}
+
+/*
+Sekce Partneri
+--------------------------------------------------- */
+.partners {
+	@extend %padding;
+
+	.partner {
+		margin-bottom: 30px;
+
+		@include breakpoint($lap-and-up) {
+			margin-bottom: 0;
+		}
+
+		a {
+			opacity: 0.4;
+			text-align: center;
+			display: block;
+			padding: 0 15px;
+			max-width: 300px;
+			margin: 0 auto;
+
+			&:hover {
+				opacity: 1;
+			}
+			img {
+				height: auto;
+			}
+		}
+	}
+}

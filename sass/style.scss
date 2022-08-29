@@ -1,0 +1,18 @@
+// Application core
+@import "variables";
+@import "core/mixins";
+
+// Bootstrap
+@import "bootstrap/bootstrap.scss";
+
+// Application components
+@import "global";
+@import "header";
+
+@import "blog";
+@import "sections";
+
+@import "form";
+@import "footer";
+
+@import "badges";

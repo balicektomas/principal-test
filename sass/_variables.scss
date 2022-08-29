@@ -1,0 +1,54 @@
+/*
+Konstanty design
+--------------------------------------------------- */
+
+// BARVY
+$brand-color: 			#f55b30; 		// brandova barva
+$html-bg:				#fff;	 	    // barva pozadi html
+$body-bg:				#fff;			// barva pozadi body
+$text-color:			#00214d; 		// barva textu
+$heading-color:			$text-color;	// barva nadpisu
+$link-color:			$text-color;	// barva odkazu
+$link-color-hover:		$brand-color;	// hover odkazu
+$bg-light:				#e4ebef;
+
+$border-color:			#d4dbdf;	    // linky
+$warning:				#d50014; 		// warning cervena - formular
+$succes:				#d4edda; 		// success zelena - formular
+
+$font-family:			'Open Sans', sans-serif;
+$font-family-heading:	$font-family;
+$font-size:				16px;			// velikost pisma body
+$line-height:			1.666;			// vychozi line-height
+$font-weight: 			400;			// vychozi tloustka pisma
+$font-weight-heading:	600;			// tloustka pisma nadpisu
+
+// ROZMERY
+$container-width:		1200px;			// maximalni sirka containeru
+$container-padding:		0 15px;			// vychozi padding
+$space:					70px;
+$space-tab:				50px;
+$space-palm:			35px;
+
+// CESTY
+$img-path:          	'../img/';
+
+// OSTATNI
+$box-shadow: 			none;
+$border-radius: 		14px;
+$border-radius-small:	10px;
+$border-radius-large:	22px;
+$transition: 			0.3s all;
+
+
+/*
+BREAKPOINTY
+========================================================================================================= */
+$custom-lap-start:          768px !default; 	// max velikost pro breakpoint mobil
+$custom-desk-start:         992px !default; 	// max velikost pro breakpoint tablet
+$custom-desk-wide-start:    1200px !default; 	// min velikost pro breakpoint hd
+
+$palm:                     	$custom-lap-start - 1 !default; 	// Maximalni hodnota od 1px do xxx
+$lap-and-up:                $custom-lap-start !default; 		// Minimalni hodnota pro breakpoint tablet a vyse
+$desk-and-up:               $custom-desk-start !default; 		// Minimalni hodnota pro breakpoint desktop a vyse
+$desk-wide:                 $custom-desk-wide-start !default;	// Minimalni hodnota pro sirokouhly display

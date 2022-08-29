@@ -1,0 +1,148 @@
+/*
+Hlavicka
+--------------------------------------------------- */
+.header {
+	position: relative;
+	@include bg("bg.jpg", $text-color, no-repeat, auto, 50% 0);
+	color: #fff;
+
+	.d-md-flex {
+		height: 150px;
+	}
+
+	// logo
+	.logo {
+		padding: 20px 0;
+		float: left;
+
+		@include breakpoint($lap-and-up) {
+			float: none;
+			margin: auto 0;
+			padding: 0;
+		}
+
+		img {
+			max-width: 180px;
+			max-height: 54px;
+
+			@include breakpoint($lap-and-up) {
+				max-width: 201px;
+				max-height: 54px;
+			}
+		}
+	}
+
+	// hlavni menu
+	.navbar {
+		@include abs-pos(75px 0 auto 0);
+		padding: 0 15px;
+		background-color: $text-color;
+		box-shadow: 0 10px 10px $text-color;
+
+		@include breakpoint($lap-and-up) {
+			position: relative;
+			top: auto;
+			margin: auto;
+			background: none;
+			box-shadow: none;
+		}
+
+		.nav-item {
+
+			&.active .nav-link:before {
+				display: block;
+			}
+			&:first-of-type .nav-link {
+				margin-left: 0;
+			}
+			&:last-of-type .nav-link {
+				margin-right: 0;
+			}
+		}
+		.nav-link {
+			text-decoration: none;
+			font-size: 16px;
+			position: relative;
+			color: #fff;
+			padding: 12px 0;
+
+			@include breakpoint($lap-and-up) {
+				padding: 5px 2px;
+				margin: 0 15px;
+			}
+			@include breakpoint($desk-and-up) {
+				margin: 0 28px;
+			}
+
+			&:hover {
+				color: $brand-color;
+			}
+			&:before {
+				content: '';
+				@include wh(50px, 3px);
+				background-color: $brand-color;
+				@include abs-pos(auto auto 0 0);
+				display: none;
+
+				@include breakpoint($lap-and-up) {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	// burger ikona
+	.navbar-toggler {
+		@include wh(30px, 40px);
+		float: right;
+		margin-top: 20px;
+		margin-right: 10px;
+
+		.navbar-toggler-icon {
+			@include svg-bg('ico-cross', transparent, 50% 50%, 22px auto);
+		}
+
+		&.collapsed .navbar-toggler-icon {
+			background-image: url(#{$img-path}ico-menu.svg);
+			background-size: 20px auto;
+		}
+	}
+
+	// prepinas jazyku
+	.lang {
+		float: left;
+		clear: left;
+		margin-top: 10px;
+		
+		@include breakpoint($lap-and-up) {
+			margin: auto 25px auto 0;
+			float: none;
+			clear: none;
+		}
+
+		.selectpicker {
+			border: none;
+			background: none;
+			color: #fff;
+			cursor: pointer;
+
+			option {
+				color: $text-color;
+				background-color: #fff;
+			}
+		}
+	}
+
+	// tlacitko
+	.header-btn {
+		margin: 0;
+		float: right;
+		clear: right;
+
+		@include breakpoint($lap-and-up) {
+			margin: auto 0;
+			float: none;
+			clear: none;
+		}
+	}
+}

@@ -1,0 +1,223 @@
+/*
+Globalni styly
+--------------------------------------------------- */
+*,
+*:before,
+*:after	{ -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+html {
+	background-color: #fff;
+	min-height: 100%;
+}
+body {
+	color: $text-color;
+	font-family: $font-family;
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 0;
+	background: none;
+	font-size: $font-size;
+	line-height: $line-height;
+	overflow-x: hidden;
+	background-color: $body-bg;
+}
+a {
+	text-decoration: underline;
+	color: $link-color;
+	transition: $transition;
+
+	&:hover {
+		text-decoration: none;
+		color: $link-color-hover;
+	}
+}
+p {
+	margin: 0 0 1.5em;
+}
+img {
+	max-width: 100%;
+}
+strong,
+th {
+	font-weight: 700;
+}
+blockquote {
+	border-left: 10px solid $border-color;
+	margin: 0 0 1.5em;
+	padding: 5px 0 5px 15px;
+
+	&:before {
+		color: lighten($text-color, 40);
+		content: '\201D';
+		font-family: Arial;
+		font-size: 4em;
+		line-height: 0.1em;
+		margin-right: 10px;
+		vertical-align: -0.3em;
+	}
+}
+
+
+%cf:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+%mb {
+	margin-bottom: $space-palm;
+
+	@include breakpoint($lap-and-up) {
+		margin-bottom: $space-tab;
+	}
+	@include breakpoint($desk-and-up) {
+		margin-bottom: $space;
+	}
+}
+%padding {
+	padding: $space-palm 0;
+
+	@include breakpoint($lap-and-up) {
+		padding: $space-tab 0;
+	}
+	@include breakpoint($desk-and-up) {
+		padding: $space 0;
+	}
+}
+.hidden {
+	display: none !important;
+}
+
+// selection
+::-moz-selection {
+    color: #fff;
+    background: $brand-color;
+}
+::selection {
+    color: #fff;
+    background: $brand-color;
+}
+
+/*
+Container a jeho modifikace
+--------------------------------------------------- */
+main {
+	@extend %cf;
+}
+.container {
+	@extend %cf;
+	max-width: $container-width;
+	padding: $container-padding;
+	margin: 0 auto;
+}
+
+
+/*
+Nadpisy
+--------------------------------------------------- */
+h1,h2,h3,h4,h5,h6,
+.h1,.h2,.h3,.h4,.h5,.h6 {
+	color: $heading-color;
+	font-family: $font-family-heading;
+	font-weight: $font-weight-heading;
+	margin: 0 0 1.25em;
+}
+h1 {
+	font-size: 36px;
+	margin-bottom: 1.5rem;
+	line-height: 1.1;
+	font-weight: 700;
+
+	@include breakpoint($lap-and-up) {
+		font-size: 60px;
+	}
+}
+h2 {
+	font-size: 24px;
+	line-height: 1.2632;
+
+	@include breakpoint($lap-and-up) {
+		font-size: 30px;
+	}
+
+	&.bordered {
+		position: relative;
+		padding-bottom: 25px;
+		margin-bottom: 3rem;
+
+		@include breakpoint($lap-and-up) {
+			padding-bottom: 40px;
+			margin-bottom: 4rem;
+		}
+
+		&:before {
+			content: '';
+			@include wh(52px, 3px);
+			background-color: $brand-color;
+			@include abs-pos(auto auto 0 50%);
+			transform: translateX(-50%);
+		}
+	}
+}
+h3 {
+	font-size: 18px;
+	line-height: 1.4;
+}
+h4 {
+	font-size: 18px;
+}
+h5 {
+	font-size: 16px;
+}
+
+
+/*
+Seznamy
+--------------------------------------------------- 
+main ul {
+	margin: 0 0 1.5em;
+	list-style: none;
+	padding-left: 0;
+
+	li {
+		margin-left: 0;
+		padding-left: 38px;
+		@include svg-bg('li', transparent, 0 8px, 17px 11px);
+		margin-bottom: 10px;
+	}
+	ul {
+		margin: 15px 0;
+	}
+}*/
+
+
+/*
+Tabulka
+--------------------------------------------------- 
+.table,
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 0 0 25px;
+	border: 2px solid $border-color;
+	background-color: #fff;
+	font-size: 16px;
+
+	th, td {
+		text-align: left;
+		vertical-align: top;
+		padding: 3px 8px;
+		border: 1px solid $border-color;
+		background-color: #fff;
+		font-size: 15px;
+
+		&:nth-child(2) {
+			text-align: right;
+		}
+		&:nth-child(3) {
+			text-align: center;
+		}
+	}
+	th {
+		font-weight: 700;
+	}
+}*/
